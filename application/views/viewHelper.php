@@ -77,7 +77,7 @@ class viewHelper extends View {
             }
         }
 
-        $html .= '<li>Do you know details about this picture? Mail us at heritage@iitm.ac.in quoting the image ID. Thank you.</li>';
+        // $html .= '<li>Do you know details about this picture? Mail us at heritage@iitm.ac.in quoting the image ID. Thank you.</li>';
 
         $html .= '</ul>';
 
