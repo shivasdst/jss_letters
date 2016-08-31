@@ -5,7 +5,7 @@ define('DEFAULT_VOLUME', '025');
 define('DEFAULT_ISSUE', '01');
 define('DEFAULT_PAGE', '0001-0010');
 
-define('DEFAULT_ALBUM', '0001');
+define('DEFAULT_ALBUM', '01');
 define('PHOTO_FILE_EXT', '.JPG');
 
 // db table names
@@ -18,7 +18,7 @@ define('METADATA_TABLE_L4', 'reset');
 define('SEARCH_OPERAND', 'AND');
 
 // user settings (login and registration)
-define('SALT', 'iitm');
+define('SALT', 'jss');
 define('REQUIRE_EMAIL_VALIDATION', True);//Set these values to True only
 define('REQUIRE_RESET_PASSWORD', True);//if outbound mails can be sent from the server
 
