@@ -1,1 +1,6 @@
-public/Photos
+public/Photos/*.jpg
+public/Photos/*/*.jpg
+public/Photos/*/*/*.jpg
+public/Photos/*.JPG
+public/Photos/*/*.JPG
+public/Photos/*/*/*.JPG
