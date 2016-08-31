@@ -19,13 +19,13 @@ define('PHY_FLAT_URL', PHY_BASE_URL . 'application/views/flat/');
 define('PHY_STOCK_IMAGE_URL', PHY_PUBLIC_URL . 'images/stock/');
 define('PHY_RESOURCES_URL', PHY_PUBLIC_URL . 'Resources/');
 
-define('DB_PREFIX', 'iitm');
+define('DB_PREFIX', 'jss');
 define('DB_HOST', 'localhost');
 
 // photo will become iitmPHOTO inside
-define('DB_NAME', 'heritage');
+define('DB_NAME', 'letters');
 
-define('heritage_USER', 'root');
-define('heritage_PASSWORD', 'mysql');
+define('letters_USER', 'root');
+define('letters_PASSWORD', 'mysql');
 
 ?>
