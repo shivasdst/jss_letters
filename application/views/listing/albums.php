@@ -3,7 +3,7 @@
         <!-- Column 1 -->
         <div class="col-md-12 text-center">
             <ul class="list-inline sub-nav">
-                <li><a href="<?=BASE_URL?>listing/albums">Albums</a></li>
+                <li><a href="<?=BASE_URL?>listing/albums">Letters</a></li>
                 <li><a>·</a></li>
                 <li><a href="<?=BASE_URL?>Publications">Publications</a></li>
                 <li><a>·</a></li>
