@@ -586,6 +586,7 @@ a.moretag {
     font-size: 18px;
     margin-bottom: 10px;
     text-align: left;
+    line-height: 1.5;
 }
 .physical p{
     font-size: 14px;
