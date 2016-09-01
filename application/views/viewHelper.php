@@ -25,7 +25,7 @@ class viewHelper extends View {
     public function getPhotoCount($id = '') {
 
         $count = sizeof(glob(PHY_PHOTO_URL . $id . '/*.json'));
-        return ($count > 1) ? $count . ' Photographs' : $count . ' Photograph';
+        return ($count > 1) ? $count . ' Letters' : $count . ' Letter';
     }
 
     public function getActualID($combinedID) {
