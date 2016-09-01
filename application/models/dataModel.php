@@ -34,7 +34,7 @@ class dataModel extends Model {
 			$albumDescription = $albumDescription->description;
 			$photoDescription = $this->getJsonFromFile($photo);
 			
-			$data['description'] = json_encode(array_merge(json_decode($photoDescription, true), json_decode($albumDescription, true)));
+			$data['description'] = json_encode(array_merge(json_decode($photoDescription, true), json_decode($albumDescription, true)),JSON_UNESCAPED_UNICODE);
 
 			$this->db->insertData(METADATA_TABLE_L2, $dbh, $data);
 		}
