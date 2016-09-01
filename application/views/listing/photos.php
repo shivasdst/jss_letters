@@ -8,7 +8,7 @@
             <ul class="list-inline sub-nav">
                 <li><a href="<?=BASE_URL?>listing/albums">Letters</a></li>
                 <li><a>·</a></li>
-                <li><a href="<?=BASE_URL?>Publications">Publications</a></li>
+                <li><a href="#">Publications</a></li>
                 <li><a>·</a></li>
                 <li><a>Search</a></li>
                 <li id="searchForm">
