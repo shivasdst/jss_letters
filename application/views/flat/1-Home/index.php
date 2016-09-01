@@ -34,80 +34,6 @@
             The establishment of the Samskritha Paathashala by the 22nd Peethadheeshwara (Pontiff) Sri Shivarathreeshwara Mahaswamiji who was popularly known as the Mantra Maharshi might be called a landmark in the history of the Sree Math. When the 23rd Peethadheeshwara (Pontiff) Jagadguru Dr. Sri Shivaratri Rajendra Mahaswamiji came to Mysore in 1926 to pursue higher education, he observed that many rural students were in need of food and shelter. He gave them shelter at his own place and this marked the beginning of offering education to poor students. As far back as 1942, he established a hostel and offered free food and hostel facilities for poor rural students. This marked Sree Math’s first step in the field of development of the society.
             </p>
 
-            <p>
-            Instead of making students come to cities seeking education, Jagadguru Dr. Sri Shivarathri Rajendra Swamiji thought of starting educational institutions in rural areas. In order to make this possible, he started the Jagadguru Sri Shivarathreeshwara Mahavidya-peetha in 1954. In order to implement the educational programs, it was registered under the Societies’ Registration Act 1960, vide: Reg. No. 12/1962 on 17-07-1962. Under the untiring efforts of Dr. Sri Shivarathri Rajendra Mahaswamiji, the Vidyapeetha has witnessed enormous growth in the field of education.
-            </p>
-
-            <p>
-            JSS Mahavidyapeetha which took its first step in the field of education with the starting of a high school has now forayed into Crèches, Primary schools, High schools, Pre-university and Degree Colleges, Law, Engineering, Medicine, Dental Sciences and Pharmacy and has thus provided all classes of the society easy access to educational opportunities. Now, the JSS Deemed to be University has been started and Medical, Dental and Pharmacy Colleges at Mysore and Ooty are brought under its control since 2008.
-            </p>
-
-            <p>
-            A young  child who joins a JSS  institution seeking education may go on to become a scientist, or an engineer, or a technologist, or a doctor, or a philosopher. Jagadguru Sri Shivarathreeshwara Mahavidyapeetha thus has all the facilities that shape the youngster into a good citizen of the    country.
-            </p>
-
-            <p>
-            Under the leadership of the present pontiff, the 24th Peethadhyaksha, Sri Shivarathri Deshikendra Mahaswamiji, the Mahavidyapeetha has not only established educational institutions in places where necessary, it has also made sure that all these institutions impart quality education. Engineering, medical, dental and law colleges run by JSS are reputed to be the best educational institutions of their kind in the state and have also become autonomous. Apart from formal and vocational training, a training institute for Civil Services Examinations and Jana Shikshana Samsthans have also been established as the Mahavidyapeetha has realized the need for continuing education.
-            </p>
-
-            <p>
-            The JSS Medical Service Trust launched its 1200 bed hospital at Mysore as part of its social service commitments and has provided good medical services for the rural population in this region. In addition, this hospital is being used as a teaching hospital for students from the JSS Medical College.
-            </p>
-
-            <p>
-            With the objective of giving good quality education, public schools with CBSC Syllabus are established. This includes the residential school at Ooty in Tamilnadu that has the best facilities.
-            </p>
-
-            <p>
-            JSS Mahavidyapeetha has expanded its jurisdiction  by establishing and registering another Mahavidyapeetha at Ghaziabad in Uttar Pradesh. Through this, it is running an engineering college and a public school in Noida (UP).
-            </p>
-
-            <p>
-            In Suttur, around 4,000 underprivileged children from across the state and the country as well  are receiving free primary and high school education. Under this project, students from the 1st to 10th standard are provided with free uniforms, books, boarding and lodging facilities. This project, which reaches out to children without any discrimination of caste and religion, is  highly lauded by the public.
-            </p>
-
-            <p>
-            The JSS Krishi Vignana Kendra (Agricultural Sciences Centre) was established in Suttur in 1994 to improve the economic conditions of farmers in the field of agriculture, animal husbandry and rural development. The centre offers training, transfer of technology, material assistance and holds demonstrations and exhibitions in order to educate the farmers in modern agricultural methods. The publication division not only sponsors priceless books, but is  also involved in religious publicity activities.
-            </p>
-
-            <p>
-            The JSS Mahavidyapeetha has also started a polytechnic for the differently abled with the aim of empowering them to have self employment and lead a good life. For the first time in the country, such a polytechnic was started with grant in aid from the World Bank. The students are being trained in serveral subjects. A hostel for differently abled working women and girl students is also  being  run.
-            </p>
-
-            <p>
-            It is worth mentioning here about the educational institutions established abroad – JSS Academy, Mauritius (Engineering College) and two schools viz. JSS International School and JSS Private School and also JSS Academy, Dubai.
-            </p>
-
-            <p>
-            The JSS Mahavidyapeetha has been undertaking public welfare programmes in various fields that help the holistic development of the society.
-            </p>
-
-            <p>
-            Under the umbrella of the the JSS Mahavidyapeetha, a number of sister organisations have been registered to render service in several fields. Through them, it is striving for the all round development of the society namely; cultural and religious,health and social welfare sectors.
-            </p>
-
-            <p>
-            They are:
-            </p>
-
-            <ul>
-                <li>JSS Medical Service Trust, Mysore</li>
-                <li>JSS Mahavidyapeetha, Ghaziabad</li>
-                <li>Sri Shivarathreeshwara Rural Development Foundation, Mysore</li>
-                <li>JSS Consultancy Trust, Mysore</li>
-                <li>JSS Janashikshana Samsthans, Mysore and Bangalore</li>
-                <li>JSS International Education Trust</li>
-                <li>JSS Dharmika Datti, Mysore</li>
-                <li>Akhila Bharatha Sharana Sahitya Parishath, Mysore</li>
-                <li>JSS Sangeeta Sabha, Mysore</li>
-                <li>JSS Spritual Mission, USA</li>
-                <li>Sahukar B. Subbanna Charitable Trust, Mysore</li>
-                <li>Kyatanahalli Siddalingaiah Samskritha Paatashale and Free Hostel Trust, Mysore</li>
-                <li>JSS Body Donation Organisation</li>
-                <li>JSS Employees Welfare Trust</li>
-                <li>JSS Education Foundation Pvt. Ltd.</li>
-                <li>JSS University</li>
-            </ul>
         </div>
     </div>    
 </div>
@@ -131,14 +57,14 @@
                 </li>
                 <li class="stat-elem">
                     <a href="#">
-                        <h2><i class="fa fa-file-text-o"></i></h2>
+                        <h2><i class="fa fa-volume-up"></i></h2>
                         <p>Multimedia</p>
                     </a>
                 </li>
                 <li class="stat-elem">
                     <a href="<?=BASE_URL?>Oral_History">
-                        <h2><i class="fa fa-volume-up"></i></h2>
-                        <p>Oral History</p>
+                        <h2><i class="fa fa-image"></i></h2>
+                        <p>Photographs</p>
                     </a>
                 </li>
             </ul>
