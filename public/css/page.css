@@ -279,7 +279,7 @@ a.moretag {
     #grid > #posts .post.cs2 { width: 742px; }
 }
 .image-full-size img{
-    max-width: 850px;
+    /*max-width: 850px;*/
     margin: 0 auto;
 }
 .image-desc-full li{
