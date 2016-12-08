@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="stat-elem">
-                    <a href="<?=BASE_URL?>Publications">
+                    <a href="#">
                         <h2><i class="fa fa-book"></i></h2>
                         <p>Publications</p>
                     </a>
