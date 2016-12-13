@@ -34,16 +34,17 @@ class data extends Controller {
 
 			foreach ($albums as $album) {
 			
-				// List photos
-				$photos = $this->model->listFiles(str_replace('.json', '/', $album), 'json');
-			
-				if($photos) {
 
-					$this->model->insertPhotos($photos, $dbh);
+				// List photos
+				$letters = $this->model->listFiles(str_replace('.json', '/', $album), 'json');
+
+				if($letters) {
+
+					$this->model->insertLetters($letters, $dbh);
 				}
 				else{
 
-					echo 'Album ' . $album . ' does not have any photos' . "\n";
+					echo 'Album ' . $album . ' does not have any letters' . "\n";
 				}
 			}
 		}

@@ -23,18 +23,18 @@ class dataModel extends Model {
 		}
 	}
 
-	public function insertPhotos($photos, $dbh) {
+	public function insertLetters($letters, $dbh) {
 
-		foreach ($photos as $photo) {
+		foreach ($letters as $letter) {
 			
-			$data['id'] = preg_replace('/.*\/(.*)\.json/', "$1", $photo);
-			$data['albumID'] = preg_replace('/.*\/(.*)\/.*\.json/', "$1", $photo);
+			$data['id'] = preg_replace('/.*\/(.*)\.json/', "$1", $letter);
+			$data['albumID'] = preg_replace('/.*\/(.*)\/.*\.json/', "$1", $letter);
 			$data['id'] = $data['albumID'] . "__" . $data['id'];
 			$albumDescription = $this->getAlbumDetails($data['albumID']);
 			$albumDescription = $albumDescription->description;
-			$photoDescription = $this->getJsonFromFile($photo);
+			$letterDescription = $this->getJsonFromFile($letter);
 			
-			$data['description'] = json_encode(array_merge(json_decode($photoDescription, true), json_decode($albumDescription, true)),JSON_UNESCAPED_UNICODE);
+			$data['description'] = json_encode(array_merge(json_decode($letterDescription, true), json_decode($albumDescription, true)),JSON_UNESCAPED_UNICODE);
 
 			$this->db->insertData(METADATA_TABLE_L2, $dbh, $data);
 		}
