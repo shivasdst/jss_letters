@@ -26,7 +26,7 @@ class listingModel extends Model {
 		return $data;
 	}
 
-	public function listPhotos($albumID) {
+	public function listLetters($albumID) {
 
 		$dbh = $this->db->connect(DB_NAME);
 		if(is_null($dbh))return null;

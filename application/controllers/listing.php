@@ -19,10 +19,10 @@ class listing extends Controller {
 		($data) ? $this->view('listing/albums', $data) : $this->view('error/index');
 	}
 
-	public function photos($album = DEFAULT_ALBUM) {
+	public function letters($album = DEFAULT_ALBUM) {
 
-		$data = $this->model->listPhotos($album);
-		($data) ? $this->view('listing/photos', $data) : $this->view('error/index');
+		$data = $this->model->listLetters($album);
+		($data) ? $this->view('listing/letters', $data) : $this->view('error/index');
 	}
 }
 

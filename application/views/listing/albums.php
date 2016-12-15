@@ -26,10 +26,10 @@
     <div id="posts">
 <?php foreach ($data as $row) { ?>
         <div class="post">
-            <a href="<?=BASE_URL?>listing/photos/<?=$row->albumID?>" title="View Album">
+            <a href="<?=BASE_URL?>listing/letters/<?=$row->albumID?>" title="View Album">
                 <div class="fixOverlayDiv">
                     <img class="img-responsive" src="<?=$viewHelper->includeRandomThumbnail($row->albumID)?>">
-                    <div class="OverlayText"><?=$viewHelper->getPhotoCount($row->albumID)?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span></div>
+                    <div class="OverlayText"><?=$viewHelper->getLettersCount($row->albumID)?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span></div>
                 </div>
                 <p class="image-desc">
                     <strong><?=$viewHelper->getDetailByField($row->description, 'Title')?></strong>

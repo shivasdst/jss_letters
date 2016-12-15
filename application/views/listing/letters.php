@@ -35,8 +35,8 @@
 <?php foreach ($data as $row) { ?>
         <div class="post">
             <?php $actualID = $viewHelper->getActualID($row->id); ?>
-            <a href="<?=BASE_URL?>describe/photo/<?=$row->albumID . '/' . $row->id?>" title="View Details">
-                <img src="<?=PHOTO_URL . $row->albumID . '/thumbs/' . $actualID . '.JPG'?>">
+            <a href="<?=BASE_URL?>describe/letter/<?=$row->albumID . '/' . $row->id?>" title="View Details">
+                <img src="<?=$viewHelper->includeRandomThumbnailFromLetter($row->id)?>">
                 <?php
                     $caption = $viewHelper->getDetailByField($row->description, 'Caption');
                     if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
