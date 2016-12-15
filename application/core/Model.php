@@ -100,7 +100,7 @@ class Model {
 		return $result;
 	}
 
-	public function getPhotoDetails($albumID, $id) {
+	public function getLetterDetails($albumID, $id) {
 
 		$dbh = $this->db->connect(DB_NAME);
 		if(is_null($dbh))return null;
@@ -122,16 +122,18 @@ class Model {
 
 		$actualID = $this->getActualID($id);
 
-		$photoPath = $albumPath . "/" . $actualID . PHOTO_FILE_EXT;
+		$letterPath = $albumPath . "/" . $actualID . '.json';
+		// var_dump($letterPath);
 
-		$files = glob($albumPath . "/*" . PHOTO_FILE_EXT);
-
-		$match = array_search($photoPath, $files);
+		$files = glob($albumPath . "/*" . '.json');
+		// var_dump($files);
+		$match = array_search($letterPath, $files);
 
 		if(!($match === False)){
 			
-			$data['prev'] = (isset($files[$match-1])) ? preg_replace("/.*\/(.*)\.JPG/", "$1", $files[$match-1]) : '';
-			$data['next'] = (isset($files[$match+1])) ? preg_replace("/.*\/(.*)\.JPG/", "$1", $files[$match+1]) : '';
+			$data['prev'] = (isset($files[$match-1])) ? preg_replace("/.*\/(.*)\.json/", "$1", $files[$match-1]) : '';
+			$data['next'] = (isset($files[$match+1])) ? preg_replace("/.*\/(.*)\.json/", "$1", $files[$match+1]) : '';
+
 			return $data;
 		}	
 		else{
