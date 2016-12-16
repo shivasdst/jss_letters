@@ -1,3 +1,5 @@
+
+
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -46,3 +48,4 @@
     </div>
 </div>
 
+    <script type="text/javascript" src="<?=PUBLIC_URL?>js/viewer.js"></script>
