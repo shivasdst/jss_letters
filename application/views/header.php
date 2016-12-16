@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="<?=PUBLIC_URL?>css/aux.css">
     <link rel="stylesheet" href="<?=PUBLIC_URL?>css/social.css">
     <link rel="stylesheet" href="<?=PUBLIC_URL?>css/viewer.css">
-    <script type="text/javascript" src="<?=PUBLIC_URL?>js/viewer.js"></script>
+
 
     <script type="text/javascript">var base_url = "<?= BASE_URL?>";</script>
     <!-- Favicon
