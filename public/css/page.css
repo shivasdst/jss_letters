@@ -696,3 +696,7 @@ span.img-small img{
   display: inline;
   margin: 0.4em;
 }
+#viewletterimages{
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}

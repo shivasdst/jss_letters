@@ -35,9 +35,6 @@
             </ul>
             <?php $actualID = $viewHelper->getActualID($data->id); ?>
             <?php $viewHelper->displayThumbs($data->id); ?>
-<!--             <div class="image-full-size">
-                <img class="img-responsive" src="<?=PHOTO_URL . $data->albumID . '/' . $actualID . '.JPG'?>">
-            </div> -->
         </div>            
         <div class="col-md-3">
             <div class="image-desc-full">
@@ -49,4 +46,3 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=PUBLIC_URL?>js/lightbox.min.js"></script>

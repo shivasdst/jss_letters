@@ -81,6 +81,35 @@ jQuery(window).load(function () {
     
     jQuery(window).bind('resize', buildMasonry()).trigger('resize');
 
+  var vieweroptions = {
+        // inline: true,
+        url: 'data-original',
+        ready:  function (e) {
+          console.log(e.type);
+        },
+        show:  function (e) {
+          console.log(e.type);
+        },
+        shown:  function (e) {
+          console.log(e.type);
+        },
+        hide:  function (e) {
+          console.log(e.type);
+        },
+        hidden:  function (e) {
+          console.log(e.type);
+        },
+        view:  function (e) {
+          console.log(e.type, e.detail.index);
+        },
+        viewed:  function (e) {
+          console.log(e.type, e.detail.index);
+          // this.viewer.zoomTo(1).rotateTo(180);
+        }
+      };
+
+    var viewer = new Viewer(document.getElementById('viewletterimages'),vieweroptions);
+
 });
 
 function buildMasonry(){

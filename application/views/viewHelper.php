@@ -122,16 +122,15 @@ class viewHelper extends View {
         $files = glob($filesPath);
 
 
-        echo '<div class="letter_thumbnails">';
+        echo '<div id="viewletterimages" class="letter_thumbnails">';
         foreach ($files as $file) {
 
             $mainFile = $file;
             $mainFile = preg_replace('/thumbs\//', '', $mainFile);
             echo '<span class="img-small">';
 
-            echo '<a href="' . str_replace(PHY_PHOTO_URL, PHOTO_URL, $mainFile) . '" data-lightbox="slideshow">';
-            echo '<img class="img-responsive" src="' . str_replace(PHY_PHOTO_URL, PHOTO_URL, $file) . '" >';
-            echo '</a>';
+            echo '<img class="img-responsive" data-original="'.str_replace(PHY_PHOTO_URL, PHOTO_URL, $mainFile).'" src="' . str_replace(PHY_PHOTO_URL, PHOTO_URL, $file) . '" >';
+
             echo '</span>';
         }
         // echo $albumID . '->' . $letterID;
