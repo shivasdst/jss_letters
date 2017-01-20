@@ -50,6 +50,12 @@
                     </a>
                 </li>
                 <li class="stat-elem">
+                    <a href="<?=PHOTOS_URL?>">
+                        <h2><i class="fa fa-image"></i></h2>
+                        <p>Photographs</p>
+                    </a>
+                </li>
+                <li class="stat-elem">
                     <a href="#">
                         <h2><i class="fa fa-book"></i></h2>
                         <p>Publications</p>
@@ -59,12 +65,6 @@
                     <a href="#">
                         <h2><i class="fa fa-volume-up"></i></h2>
                         <p>Multimedia</p>
-                    </a>
-                </li>
-                <li class="stat-elem">
-                    <a href="<?=BASE_URL?>Oral_History">
-                        <h2><i class="fa fa-image"></i></h2>
-                        <p>Photographs</p>
                     </a>
                 </li>
             </ul>
