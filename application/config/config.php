@@ -1,6 +1,7 @@
 <?php
 
 define('BASE_URL', 'http://localhost/jss_letters/');
+define('PHOTOS_URL', 'http://localhost/jss_photos/');
 define('PUBLIC_URL', BASE_URL . 'public/');
 define('XML_SRC_URL', BASE_URL . 'md-src/xml/');
 define('PHOTO_URL', PUBLIC_URL . 'Letters/');
