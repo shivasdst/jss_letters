@@ -3,9 +3,9 @@
         <!-- Column 1 -->
         <div class="col-md-12 text-center">
             <ul class="list-inline sub-nav">
-                <li><a href="<?=BASE_URL?>listing/albums">Letters</a></li>
+                <li><a href="<?=BASE_URL?>../jss_photos">Albums</a></li>
                 <li><a>·</a></li>
-                <li><a href="#">Publications</a></li>
+                <li><a href="<?=BASE_URL?>listing/albums">Letters</a></li>
                 <li><a>·</a></li>
                 <li><a>Search</a></li>
                 <li id="searchForm">
@@ -22,20 +22,15 @@
         </div>
     </div>
 </div>
-<div id="grid" class="container-fluid">
-    <div id="posts">
-<?php foreach ($data as $row) { ?>
-        <div class="post">
-            <a href="<?=BASE_URL?>listing/letters/<?=$row->albumID?>" title="View Album">
-                <div class="fixOverlayDiv">
-                    <img class="img-responsive" src="<?=$viewHelper->includeRandomThumbnail($row->albumID)?>">
-                    <div class="OverlayText"><?=$viewHelper->getLettersCount($row->albumID)?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span></div>
-                </div>
-                <p class="image-desc">
-                    <strong><?=$viewHelper->getDetailByField($row->description, 'Title')?></strong>
-                </p>
-            </a>
+
+<div class="container">
+    <div class="row gap-above-med">
+        <div class="col-md-12">
+            <p class="journal-article-title">JSON details for Albums / Letters successfully updated</p>
+            <p class="journal-article-subtitle">Task completed</p>
+            <ul>
+            
+            </ul>
         </div>
-<?php } ?>
     </div>
 </div>

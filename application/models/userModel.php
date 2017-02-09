@@ -115,6 +115,7 @@ class userModel extends Model {
 
 		$this->incrementVisitCount($credentials);
 		$_SESSION['email'] = $credentials['lemail'];
+		$_SESSION['password'] = $credentials['lpassword'];
         $_SESSION['login'] = 1;
 	}
 

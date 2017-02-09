@@ -118,7 +118,7 @@ class Model {
 
 	public function getNeighbourhood($albumID, $id) {
 
-		$albumPath = PHY_PHOTO_URL . $albumID;
+		$albumPath = PHY_LETTER_URL . $albumID;
 
 		$actualID = $this->getActualID($id);
 

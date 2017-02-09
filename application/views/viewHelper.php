@@ -24,7 +24,7 @@ class viewHelper extends View {
 
     public function getLettersCount($id = '') {
 
-        $count = sizeof(glob(PHY_PHOTO_URL . $id . '/*.json'));
+        $count = sizeof(glob(PHY_LETTER_URL . $id . '/*.json'));
         return ($count > 1) ? $count . ' Letters' : $count . ' Letter';
     }
 
@@ -40,25 +40,25 @@ class viewHelper extends View {
 
     public function includeRandomThumbnail($id = '') {
 
-        $letters = glob(PHY_PHOTO_URL . $id . '/*',GLOB_ONLYDIR);
+        $letters = glob(PHY_LETTER_URL . $id . '/*',GLOB_ONLYDIR);
         $randNum = rand(0, sizeof($letters) - 1);
         $letterSelected = $letters[$randNum];        
 
         $pages = glob($letterSelected . '/thumbs/*.JPG');
         $randNum = rand(0, sizeof($pages) - 1);
         $pageSelected = $pages[$randNum];
-
-        return str_replace(PHY_PHOTO_URL, PHOTO_URL, $pageSelected);
+        
+        return str_replace(PHY_LETTER_URL, LETTER_URL, $pageSelected);
     }
 
     public function includeRandomThumbnailFromLetter($id = '') {
 
         $ids = preg_split('/__/', $id);
-        $pages = glob(PHY_PHOTO_URL . $ids[0] . '/' . $ids[1] .  '/thumbs/*.JPG');
+        $pages = glob(PHY_LETTER_URL . $ids[0] . '/' . $ids[1] .  '/thumbs/*.JPG');
         $randNum = rand(0, sizeof($pages) - 1);
         $pageSelected = $pages[$randNum];
 
-        return str_replace(PHY_PHOTO_URL, PHOTO_URL, $pageSelected);
+        return str_replace(PHY_LETTER_URL, LETTER_URL, $pageSelected);
     }
 
     public function displayFieldData($json, $auxJson='') {
@@ -71,7 +71,7 @@ class viewHelper extends View {
         if(isset($data['id'])) {
 
             $actualID = $this->getActualID($data['id']);
-            $pdfFilePath = PHOTO_URL . $data['albumID'] . '/' . $actualID . '/index.pdf'; 
+            $pdfFilePath = LETTER_URL . $data['albumID'] . '/' . $actualID . '/index.pdf'; 
             $data['id'] = $data['albumID'] . '/' . $data['id'];
             unset($data['albumID']);
         }
@@ -117,7 +117,7 @@ class viewHelper extends View {
 
         $albumID = $this->getAlbumID($id);
         $letterID = $this->getActualID($id);
-        $filesPath = PHY_PHOTO_URL . $albumID . '/' . $letterID . '/thumbs/*' . PHOTO_FILE_EXT;
+        $filesPath = PHY_LETTER_URL . $albumID . '/' . $letterID . '/thumbs/*' . PHOTO_FILE_EXT;
 
         $files = glob($filesPath);
 
@@ -129,7 +129,7 @@ class viewHelper extends View {
             $mainFile = preg_replace('/thumbs\//', '', $mainFile);
             echo '<span class="img-small">';
 
-            echo '<img class="img-responsive" data-original="'.str_replace(PHY_PHOTO_URL, PHOTO_URL, $mainFile).'" src="' . str_replace(PHY_PHOTO_URL, PHOTO_URL, $file) . '" >';
+            echo '<img class="img-responsive" data-original="'.str_replace(PHY_LETTER_URL, LETTER_URL, $mainFile).'" src="' . str_replace(PHY_LETTER_URL, LETTER_URL, $file) . '" >';
 
             echo '</span>';
         }
@@ -148,7 +148,39 @@ class viewHelper extends View {
 
         echo recaptcha_get_html($publickey);
     }
+    
+    public function displayDataInForm($json, $auxJson='') {
+
+        $data = json_decode($json, true);
+        
+        if ($auxJson) $data = array_merge($data, json_decode($auxJson, true));
+        
+        $count = 0;
+        $formgroup = 0;
+
+        foreach ($data as $key => $value) {
+            // echo "Key: $key; Value: $value\n";
+            $disable = (($key == 'id') || ($key == 'albumID'))? 'readonly' : '';
+            echo '<div class="form-group" id="frmgroup' . $formgroup . '">' . "\n";
+            echo '<input type="text" class="form-control" name="id'. $count . '[]"  value="' . $key . '"' . $disable  . ' />&nbsp;' . "\n";
+            echo '<input type="text" class="form-control" name="id'. $count . '[]"  value="' . $value . '"' . $disable . ' />' . "\n";
+            if($disable != "readonly"){
+                echo '<input type="button"  onclick="removeUpdateDataElement(\'frmgroup'. $formgroup .'\')" value="Remove" />' . "\n";                
+            }
+            echo '</div>' . "\n";
+            $count++;
+            $formgroup++;
+        }
+
+        echo '<div id="keyvalues">' . "\n";
+        echo '</div>' . "\n";
+        echo '<input type="button" id="keyvaluebtn" onclick="addnewfields(keyvaluebtn)" value="Add New Fields" />' . "\n";
+        echo '<input type="submit" id="submit" value="Update Data" />' . "\n";
+    }
 
 }
+
+
+
 
 ?>
