@@ -6,4 +6,5 @@ public/Letters/*.JPG
 public/Letters/*/*.JPG
 public/Letters/*/*/*.JPG
 public/Letters/*/*/*/*.JPG
+public/Letters_JPG
 junk/
