@@ -44,7 +44,7 @@ class data extends Controller {
 				}
 				else{
 
-					echo 'Album ' . $album . ' does not have any letters' . "\n";
+					echo 'Album ' . $album . ' does not have any letters' . "<br/>";
 				}
 			}
 		}
