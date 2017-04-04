@@ -1,12 +1,1 @@
-{
-    "id": "017",
-    "Type": "Letter",
-    "albumID": "008.013",
-    "From": "",
-    "To": "",
-    "Date": "",
-    "Place": "",
-    "Language": "",
-    "Keywords": "",
-    "Misc": ""
-}
+{"id":"017","Type":"Letter","albumID":"008.013","Jss":"Letter testing","sumnes":"sumne"}
