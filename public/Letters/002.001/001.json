@@ -1,8 +1,12 @@
 {
-	"id":"001",
-	"Type":"Letter",
-	"From":"ರಾಜ ಒಡೆಯರ್  ರವರು",
-	"To":"ಗುರುಮನೆ",
-	"Date":"",
-	"Keywords":"ಅರಮನೆ;ಗುರುಮನೆ"
+    "id": "001",
+    "Type": "Letter",
+    "albumID": "002.001",
+    "From": "",
+    "To": "",
+    "Date": "",
+    "Place": "",
+    "Language": "",
+    "Keywords": "",
+    "Misc": ""
 }
