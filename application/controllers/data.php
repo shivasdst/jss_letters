@@ -71,7 +71,7 @@ class data extends Controller {
 
 		$letterUrl = BASE_URL . 'describe/letter/' . $fileContents['albumID'] . "/" . $fileContents['albumID'] . "__" . $fileContents['id'];
 
-		$fileContents = json_encode($fileContents,JSON_UNESCAPED_UNICODE);
+		$fileContents = json_encode($fileContents,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
 
 		if(file_put_contents($path,$fileContents))
 		{
