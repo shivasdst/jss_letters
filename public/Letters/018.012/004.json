@@ -1,5 +1,6 @@
 {
     "id": "004",
     "Type": "Letter",
-    "albumID": "018.012"
+    "albumID": "018.012",
+    "testing": "testing"
 }
