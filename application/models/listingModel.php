@@ -46,6 +46,14 @@ class listingModel extends Model {
 		$data['albumDetails'] = $this->getAlbumDetails($albumID);
 		return $data;
 	}
+	
+	public function listCollections() {
+
+		$collectionsFile = JSON_PRECAST_URL . "collections.json";
+		$jsonData = file_get_contents($collectionsFile);
+		$data = json_decode($jsonData,true);
+		return $data;
+	}
 }
 
 ?>

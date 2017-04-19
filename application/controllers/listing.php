@@ -1,6 +1,5 @@
 <?php
 
-
 class listing extends Controller {
 
 	public function __construct() {
@@ -23,6 +22,12 @@ class listing extends Controller {
 
 		$data = $this->model->listLetters($album);
 		($data) ? $this->view('listing/letters', $data) : $this->view('error/index');
+	}
+	
+	public function collections() {
+
+		$data = $this->model->listCollections();
+		($data) ? $this->view('listing/collections', $data) : $this->view('error/index');
 	}
 }
 
