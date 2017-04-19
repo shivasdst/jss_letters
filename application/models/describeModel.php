@@ -40,6 +40,18 @@ class describeModel extends Model {
 		$dbh = null;
 		return $result;
 	}
+	
+	public function getAlbums($collectionID) {
+		$collectionsFile = JSON_PRECAST_URL . "collections.json";
+		$jsonData = file_get_contents($collectionsFile);
+		$data = json_decode($jsonData,true);
+		foreach ($data as $collection){
+			if($collection['collectionID'] == $collectionID){
+
+				return $collection["albumList"];
+			}
+		}		
+	}
 }
 
 ?>

@@ -4,6 +4,7 @@ define('DEFAULT_JOURNAL', 'sadh');
 define('DEFAULT_VOLUME', '025');
 define('DEFAULT_ISSUE', '01');
 define('DEFAULT_PAGE', '0001-0010');
+define('DEFAULT_COLLECTION', '0001');
 
 define('DEFAULT_ALBUM', '01');
 define('PHOTO_FILE_EXT', '.JPG');

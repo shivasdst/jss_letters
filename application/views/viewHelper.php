@@ -5,6 +5,20 @@ class viewHelper extends View {
     public function __construct() {
 
     }
+    
+    public function getDetailByFieldForAlbum($id = '', $firstField = '') {
+
+        $albumJsonFile = PHY_LETTER_URL . $id . '.json';
+        $albumJsonData = file_get_contents($albumJsonFile);
+        $data = json_decode($albumJsonData,true);            
+    
+        if (isset($data[$firstField])) {
+      
+            return $data[$firstField];
+        }
+
+        return '';
+    }
 
     public function getDetailByField($json = '', $firstField = '', $secondField = '') {
 

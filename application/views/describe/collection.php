@@ -26,13 +26,13 @@
     <div id="posts">
 <?php foreach ($data as $row) { ?>
         <div class="post">
-            <a href="<?=BASE_URL?>listing/letters/<?=$row->albumID?>" title="View Album">
+            <a href="<?=BASE_URL?>listing/letters/<?=$row?>" title="View Album">
                 <div class="fixOverlayDiv">
-                    <img class="img-responsive" src="<?=$viewHelper->includeRandomThumbnail($row->albumID)?>">
-                    <div class="OverlayText"><?=$viewHelper->getLettersCount($row->albumID)?><br /><small><?=$viewHelper->getDetailByField($row->description, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span></div>
+                    <img class="img-responsive" src="<?=$viewHelper->includeRandomThumbnail($row)?>">
+                    <div class="OverlayText"><?=$viewHelper->getLettersCount($row)?><br /><small><?=$viewHelper->getDetailByFieldForAlbum($row, 'Event')?></small> <span class="link"><i class="fa fa-link"></i></span></div>
                 </div>
                 <p class="image-desc">
-                    <strong><?=$viewHelper->getDetailByField($row->description, 'Title')?></strong>
+                    <strong><?=$viewHelper->getDetailByFieldForAlbum($row, 'Title')?></strong>
                 </p>
             </a>
         </div>
