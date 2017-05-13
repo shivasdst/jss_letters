@@ -149,18 +149,20 @@ class Model {
     }
 
     public function getRandomImage($id){
-
-        $photos = glob(PHY_PHOTO_URL . $id . '/thumbs/*.JPG');
-        $randNum = rand(0, sizeof($photos) - 1);
-        $photoSelected = $photos[$randNum];
-
-        return str_replace(PHY_PHOTO_URL, PHOTO_URL, $photoSelected);   	
+		
+		$lettersFolder = glob(PHY_LETTER_JPG_URL . $id . '/*', GLOB_ONLYDIR);
+		$randNum = rand(0, count($lettersFolder)-1);
+		$selectedFolder = $lettersFolder[$randNum];
+		$letter = glob($selectedFolder . '/thumbs/*.JPG');
+        $randNum = rand(0, sizeof($letter) - 1);
+        $letterSelected = $letter[$randNum];
+        return str_replace(PHY_LETTER_JPG_URL, LETTER_JPG_URL, $letterSelected);   	
     }
 
-    public function getPhotoCount($id = '') {
+    public function getLetterCount($id = '') {
 
-        $count = sizeof(glob(PHY_PHOTO_URL . $id . '/*.json'));
-        return ($count > 1) ? $count . ' Photographs' : $count . ' Photograph';
+        $count = sizeof(glob(PHY_LETTER_URL . $id . '/*.json'));
+        return ($count > 1) ? $count . ' Letters' : $count . ' Letter';
     }
 
     public function getDetailByField($json = '', $firstField = '', $secondField = '') {
@@ -177,6 +179,13 @@ class Model {
         }
 
         return '';
+    }
+    
+    public function getDetailByFieldUsingAlbumID($albumID,$field){
+		
+    	$result = $this->getAlbumDetails($albumID);
+    	$fieldDetails = $this->getDetailByField($result->description,$field);
+    	return $fieldDetails;
     }
 }
 
