@@ -25,6 +25,7 @@ class search extends Controller {
 			$query = $this->model->formGeneralQuery($data, METADATA_TABLE_L2);
 
 			$result = $this->model->executeQuery($query);
+			
 			($result) ? $this->view('search/result', $result) : $this->view('error/noResults', 'search/index/');
 		}
 		else {
