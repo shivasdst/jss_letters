@@ -1,10 +1,12 @@
 <?php $collectionID = $data[0]["collectionID"];?>
+<?php $albumID = $data[0]["albumID"];?>
 <script>
 $(document).ready(function(){
 
     var processing = false;
 
     var collectionID = <?php echo  '"' . $collectionID . '"';  ?>;
+    var albumID = <?php echo  '"' . $albumID . '"';  ?>;
 
     function getresult(url) {
         processing = true;
@@ -28,12 +30,9 @@ $(document).ready(function(){
                 var obj = JSON.parse(data);
                 var displayString = "";
                 for(i=0;i<Object.keys(obj).length-1;i++)
-                {                    
-                    // console.log(obj[i].Event);    
-                    // console.log(JSON.parse(obj[i].description).Title);
-
+                {
                     displayString = displayString + '<div class="post">';    
-                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'describe/collection/'+ collectionID + '" title="View Album">';
+                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'listing/letters/'+ albumID + '" title="View Album">';
                     displayString = displayString + '<div class="fixOverlayDiv">';
                     displayString = displayString + '<img class="img-responsive" src="' + obj[i].Randomimage + '">';
                     displayString = displayString + '<div class="OverlayText">' + obj[i].Lettercount + '<br /><small>' + obj[i].Event + '</small> <span class="link"><i class="fa fa-link"></i></span></div>';
@@ -69,8 +68,6 @@ $(document).ready(function(){
         if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.7 ){
             if($(".lastpage").length == 0){
                 var pagenum = parseInt($(".pagenum:last").val()) + 1;
-                console.log(base_url +"Suersh");
-                // alert(base_url+'describe/collection/'+ collectionID + '?page='+pagenum);
                 if(!processing)
                 {
                     getresult(base_url+'describe/collection/'+ collectionID + '?page='+pagenum);
@@ -79,7 +76,7 @@ $(document).ready(function(){
         }
         if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.95 ){
 			
-			document.getElementById("loader-icon").show();
+			document.getElementById("loader-icon").display = 'block';
 		}
     });
 });     
