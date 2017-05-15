@@ -18,10 +18,20 @@ class listing extends Controller {
 		($data) ? $this->view('listing/albums', $data) : $this->view('error/index');
 	}
 
-	public function letters($album = DEFAULT_ALBUM) {
+	public function letters($albumID = DEFAULT_ALBUM) {
 
-		$data = $this->model->listLetters($album);
-		($data) ? $this->view('listing/letters', $data) : $this->view('error/index');
+		$data = $this->model->getGetData();
+		unset($data['url']);
+		
+		if(!(isset($data["page"])))
+			$data["page"] = 1;
+	
+		$result = $this->model->listLetters($albumID,$data);
+		
+		if($data["page"] == 1)
+			($result) ? $this->view('listing/letters', $result) : $this->view('error/index');
+		else
+			echo json_encode($result, JSON_UNESCAPED_UNICODE, JSON_UNESCAPED_SLASHES);
 	}
 	
 	public function collections() {

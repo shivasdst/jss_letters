@@ -148,7 +148,7 @@ class Model {
         return preg_replace('/^(.*)__/', '', $combinedID);
     }
 
-    public function getRandomImage($id){
+    public function getRandomImageInAlbum($id){
 		
 		$lettersFolder = glob(PHY_LETTER_JPG_URL . $id . '/*', GLOB_ONLYDIR);
 		$randNum = rand(0, count($lettersFolder)-1);
@@ -157,6 +157,14 @@ class Model {
         $randNum = rand(0, sizeof($letter) - 1);
         $letterSelected = $letter[$randNum];
         return str_replace(PHY_LETTER_JPG_URL, LETTER_JPG_URL, $letterSelected);   	
+    }
+    
+    public function getFirstImageInLetter($albumID, $letterID){
+		
+		$letters = glob(PHY_LETTER_JPG_URL . $albumID . '/' . $letterID . '/thumbs/*.JPG');
+		$randNum = rand(0, sizeof($letters) - 1);
+		$fileSelected = $letters[$randNum];
+		return str_replace(PHY_LETTER_JPG_URL, LETTER_JPG_URL, $fileSelected);   	
     }
 
     public function getLetterCount($id = '') {

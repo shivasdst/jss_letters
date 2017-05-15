@@ -11,9 +11,6 @@ $(document).ready(function(){
         $.ajax({
             url: url,
             type: "GET",
-            beforeSend: function(){
-                $('#loader-icon').show();
-            },
             complete: function(){
                 $('#loader-icon').hide();
             },
@@ -36,7 +33,7 @@ $(document).ready(function(){
                     // console.log(JSON.parse(obj[i].description).Title);
 
                     displayString = displayString + '<div class="post">';    
-                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'listing/photos/'+ obj[i].albumID + '" title="View Album">';
+                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'describe/collection/'+ collectionID + '" title="View Album">';
                     displayString = displayString + '<div class="fixOverlayDiv">';
                     displayString = displayString + '<img class="img-responsive" src="' + obj[i].Randomimage + '">';
                     displayString = displayString + '<div class="OverlayText">' + obj[i].Photocount + '<br /><small>' + obj[i].Event + '</small> <span class="link"><i class="fa fa-link"></i></span></div>';
@@ -54,7 +51,7 @@ $(document).ready(function(){
 
                 $grid.append($content).imagesLoaded(
                     function(){
-                        $content.fadeIn(1000);
+                        $content.fadeIn(500);
                         $grid.masonry('appended', $content);
                         processing = false;
                     }
@@ -69,7 +66,7 @@ $(document).ready(function(){
       });
     }
     $(window).scroll(function(){
-        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.8 ){
+        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.7 ){
             if($(".lastpage").length == 0){
                 var pagenum = parseInt($(".pagenum:last").val()) + 1;
                 console.log(base_url +"Suersh");
@@ -80,6 +77,10 @@ $(document).ready(function(){
                 }
             }
         }
+        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.95 ){
+			
+			document.getElementById("loader-icon").show();
+		}
     });
 });     
 </script>
