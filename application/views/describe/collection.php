@@ -36,7 +36,7 @@ $(document).ready(function(){
                     displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'describe/collection/'+ collectionID + '" title="View Album">';
                     displayString = displayString + '<div class="fixOverlayDiv">';
                     displayString = displayString + '<img class="img-responsive" src="' + obj[i].Randomimage + '">';
-                    displayString = displayString + '<div class="OverlayText">' + obj[i].Photocount + '<br /><small>' + obj[i].Event + '</small> <span class="link"><i class="fa fa-link"></i></span></div>';
+                    displayString = displayString + '<div class="OverlayText">' + obj[i].Lettercount + '<br /><small>' + obj[i].Event + '</small> <span class="link"><i class="fa fa-link"></i></span></div>';
                     displayString = displayString + '</div>';
                     displayString = displayString + '<p class="image-desc">';
                     displayString = displayString + '<strong>' + obj[i].Title + '</strong>';    
