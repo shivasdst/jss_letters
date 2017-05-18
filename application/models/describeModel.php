@@ -38,12 +38,11 @@ class describeModel extends Model {
 			$details[$count]["albumID"] = $album;
 			$details[$count]["Lettercount"] = $this->getLetterCount($album);
 			$details[$count]["Title"] = $this->getDetailByFieldUsingAlbumID($album, 'Title');
-			$details[$count]["Event"] = $this->getDetailByFieldUsingAlbumID($album, 'Event');
 			$details[$count]["Randomimage"] = $this->getRandomImageInAlbum($album);
 			
 			$count++;	
 		}
-	
+		
 		if(!empty($details)){
 
 			$details["hidden"] = '<input type="hidden" class="pagenum" value="' . $page . '" />';
@@ -52,7 +51,7 @@ class describeModel extends Model {
 
 			$details["hidden"] = '<div class="lastpage"></div>';	
 		}		
-
+			
 		return $details;
 	}
 	
