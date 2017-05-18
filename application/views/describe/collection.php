@@ -6,7 +6,6 @@ $(document).ready(function(){
     var processing = false;
 
     var collectionID = <?php echo  '"' . $collectionID . '"';  ?>;
-    var albumID = <?php echo  '"' . $albumID . '"';  ?>;
 
     function getresult(url) {
         processing = true;
@@ -32,10 +31,10 @@ $(document).ready(function(){
                 for(i=0;i<Object.keys(obj).length-1;i++)
                 {
                     displayString = displayString + '<div class="post">';    
-                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'listing/letters/'+ albumID + '" title="View Album">';
+                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'listing/letters/'+ obj[i].albumID + '" title="View Album">';
                     displayString = displayString + '<div class="fixOverlayDiv">';
                     displayString = displayString + '<img class="img-responsive" src="' + obj[i].Randomimage + '">';
-                    displayString = displayString + '<div class="OverlayText">' + obj[i].Lettercount + '<br /><small>' + obj[i].Event + '</small> <span class="link"><i class="fa fa-link"></i></span></div>';
+                    displayString = displayString + '<div class="OverlayText">' + obj[i].Lettercount + '<span class="link"><i class="fa fa-link"></i></span></div>';
                     displayString = displayString + '</div>';
                     displayString = displayString + '<p class="image-desc">';
                     displayString = displayString + '<strong>' + obj[i].Title + '</strong>';    
@@ -116,7 +115,7 @@ $(document).ready(function(){
             <a href="<?=BASE_URL?>listing/letters/<?=$row['albumID'];?>" title="View Album">
                 <div class="fixOverlayDiv">
                     <img class="img-responsive" src="<?=$row['Randomimage'];?>">
-                    <div class="OverlayText"><?=$row['Lettercount'];?><br /><small><?=$row['Event'];?></small> <span class="link"><i class="fa fa-link"></i></span></div>
+                    <div class="OverlayText"><?=$row['Lettercount'];?><span class="link"><i class="fa fa-link"></i></span></div>
                 </div>
                 <p class="image-desc">
                     <strong><?=$row['Title'];?></strong>
