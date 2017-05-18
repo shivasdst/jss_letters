@@ -27,10 +27,10 @@
 <?php foreach ($data as $row) { ?>
         <div class="post">
             <?php $actualID = $viewHelper->getActualID($row->id); ?>
-            <a href="<?=BASE_URL?>describe/letter/<?=$row->albumID?>/<?=$actualID?>" title="View Details">
+            <a href="<?=BASE_URL?>describe/letter/<?=$row->albumID?>/<?=$row->id?>" title="View Details">
                 <img src="<?=LETTER_JPG_URL . $row->albumID .  '/' . $actualID .'/thumbs/001.JPG'?>">
                 <?php
-                    $caption = $viewHelper->getDetailByField($row->description, 'Caption');
+                    $caption = $viewHelper->getDetailByField($row->description, 'Title');
                     if ($caption) echo '<p class="image-desc"><strong>' . $caption . '</strong></p>';
                 ?>
             </a>
