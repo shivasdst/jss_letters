@@ -30,7 +30,7 @@
                 <div class="fixOverlayDiv">
                     <img class="img-responsive" src="<?=$viewHelper->includeRandomThumbnail($row['albumList'][array_rand($row['albumList'])])?>">
                     <div class="OverlayText"><?=sizeof($row['albumList'])?>
-                    <?php if(($row['albumList']) > 1) echo "Albums"; else echo "Album"; ?><br /><small><?=$row['name']?></small> <span class="link"><i class="fa fa-link"></i></span></div>
+                    <?php if(($row['albumList']) > 1) echo "ಚಿತ್ರಸಂಪುಟಗಳು"; else echo "ಚಿತ್ರಸಂಪುಟ"; ?><br /><small><?=$row['name']?></small> <span class="link"><i class="fa fa-link"></i></span></div>
                 </div>
             </a>
         </div>

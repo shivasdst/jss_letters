@@ -123,10 +123,8 @@ class Model {
 		$actualID = $this->getActualID($id);
 
 		$letterPath = $albumPath . "/" . $actualID . '.json';
-		// var_dump($letterPath);
 
 		$files = glob($albumPath . "/*" . '.json');
-		// var_dump($files);
 		$match = array_search($letterPath, $files);
 
 		if(!($match === False)){
@@ -170,13 +168,12 @@ class Model {
     public function getLetterCount($id = '') {
 
         $count = sizeof(glob(PHY_LETTER_URL . $id . '/*.json'));
-        return ($count > 1) ? $count . ' Letters' : $count . ' Letter';
+        return ($count > 1) ? $count . ' ಪತ್ರಗಳು' : $count . ' ಪತ್ರ';
     }
 
     public function getDetailByField($json = '', $firstField = '', $secondField = '') {
 
         $data = json_decode($json, true);
-
         if (isset($data[$firstField])) {
       
             return $data[$firstField];
