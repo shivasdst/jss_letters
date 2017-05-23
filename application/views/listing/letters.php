@@ -35,6 +35,7 @@ $(document).ready(function(){
                     displayString = displayString + '<div class="post">';    
                     displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'describe/letter/'+ albumID + '/' + albumID + '__' + obj[i].letterID + '" title="View Details">';
                     displayString = displayString + '<img src="' + <?php echo '"' . LETTER_JPG_URL . '"'; ?> + albumID + '/' + obj[i].letterID +'/thumbs/001.JPG" >';
+                    displayString = displayString + '<div class="OverlayText">' + obj[i].pageCount + '<br /><span class="link"><i class="fa fa-link"></i></span></div>';
                     if(obj[i].Caption){
                         displayString = displayString + '<p class="image-desc">';
                         displayString = displayString + '<strong>' + obj[i].Caption + '</strong>';    
@@ -123,6 +124,7 @@ $(document).ready(function(){
         <div class="post">
             <a href="<?=BASE_URL?>describe/letter/<?=$row->albumID?>/<?=$row->albumID?>__<?=$row->letterID ?>" title="View Details">
                 <img src="<?=$row->image; ?>">
+                <div class="OverlayText"><?=$row->pageCount?><br /><span class="link"><i class="fa fa-link"></i></span></div>
                 <?php
                     if ($row->Caption) echo '<p class="image-desc"><strong>' . $row->caption . '</strong></p>';
                 ?>

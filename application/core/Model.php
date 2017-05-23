@@ -99,7 +99,13 @@ class Model {
 		$dbh = null;
 		return $result;
 	}
-
+	
+	public function getLetterPageCount($ids){
+		
+		$pageCount = glob(PHY_LETTER_JPG_URL . $ids[0] . '/' . $ids[1] . '/thumbs/*.JPG');
+		return sizeof($pageCount);	
+	}
+	
 	public function getLetterDetails($albumID, $id) {
 
 		$dbh = $this->db->connect(DB_NAME);

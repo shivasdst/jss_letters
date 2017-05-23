@@ -50,6 +50,8 @@ class listingModel extends Model {
 			$result->Caption = $this->getDetailByField($result->description, 'Caption');
 			$ids = explode("__", $result->id);
 			$result->image = $this->getFirstImageInLetter($result->albumID, $ids[1]);
+			$count = $this->getLetterPageCount($ids);
+			$result->pageCount = ($count == 1) ? $count . ' ಪುಟ' : $count . ' ಪುಟಗಳು';
 			$result->letterID = $ids[1];
 			array_push($data, $result);
 		}
