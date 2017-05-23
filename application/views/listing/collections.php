@@ -4,6 +4,7 @@ $(document).ready(function(){
     var processing = false;
 
     function getresult(url) {
+        processing = true;
         $.ajax({
             url: url,
             type: "GET",
