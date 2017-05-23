@@ -35,10 +35,22 @@ class listing extends Controller {
 	}
 	
 	public function collections() {
-
-		$data = $this->model->listCollections();
-		($data) ? $this->view('listing/collections', $data) : $this->view('error/index');
+		
+		$data = $this->model->getGetData();
+		unset($data['url']);
+		
+		if(!(isset($data["page"])))
+			$data["page"] = 1;
+	
+		$result = $this->model->listCollections($data);
+		
+		//~ var_dump($result); exit;
+		if($data["page"] == 1)
+			($result) ? $this->view('listing/collections', $result) : $this->view('error/index');
+		else
+			echo json_encode($result, JSON_UNESCAPED_UNICODE, JSON_UNESCAPED_SLASHES);	
 	}
 }
 
 ?>
+
