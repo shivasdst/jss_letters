@@ -36,10 +36,10 @@ $(document).ready(function(){
                     displayString = displayString + '<img class="img-responsive" src="' + obj[i].Randomimage + '">';
                     displayString = displayString + '<div class="OverlayText">' + obj[i].Albumcount; 
                     if(obj[i].Albumcount > 1){
-                        displayString = displayString + " ಚಿತ್ರಸಂಪುಟಗಳು";
+                        displayString = displayString + " ಸಂಗ್ರಹಣೆಗಳು";
                     }    
                     else{
-                      displayString = displayString + " ಚಿತ್ರಸಂಪುಟ";  
+                      displayString = displayString + " ಸಂಗ್ರಹ";  
                     }
                     displayString = displayString + '<br /><small>' + obj[i].name + '</small> <span class="link"><i class="fa fa-link"></i></span></div>';
                     displayString = displayString + '</div>';
@@ -116,7 +116,7 @@ $(document).ready(function(){
                 <div class="fixOverlayDiv">
                     <img class="img-responsive" src="<?=$row['Randomimage']?>">
                     <div class="OverlayText"><?=$row['Albumcount']?>
-                    <?php if(($row['Albumcount']) > 1) echo "ಚಿತ್ರಸಂಪುಟಗಳು"; else echo "ಚಿತ್ರಸಂಪುಟ"; ?><br /><small><?=$row['name']?></small> <span class="link"><i class="fa fa-link"></i></span></div>
+                    <?php if(($row['Albumcount']) > 1) echo "ಸಂಗ್ರಹಣೆಗಳು"; else echo "ಸಂಗ್ರಹ"; ?><br /><small><?=$row['name']?></small> <span class="link"><i class="fa fa-link"></i></span></div>
                 </div>
             </a>
         </div>
