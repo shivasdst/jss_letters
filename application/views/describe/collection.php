@@ -1,85 +1,5 @@
 <?php $collectionID = $data[0]["collectionID"];?>
 <?php $albumID = $data[0]["albumID"];?>
-<script>
-$(document).ready(function(){
-
-    var processing = false;
-
-    var collectionID = <?php echo  '"' . $collectionID . '"';  ?>;
-
-    function getresult(url) {
-        processing = true;
-        $.ajax({
-            url: url,
-            type: "GET",
-            complete: function(){
-                $('#loader-icon').hide();
-            },
-            success: function(data){
-                processing = true;
-                // console.log(data);
-                var gutter = parseInt(jQuery('.post').css('marginBottom'));
-                var $grid = $('#posts').masonry({
-                    gutter: gutter,
-                    // specify itemSelector so stamps do get laid out
-                    itemSelector: '.post',
-                    columnWidth: '.post',
-                    fitWidth: true
-                });
-                var obj = JSON.parse(data);
-                var displayString = "";
-                for(i=0;i<Object.keys(obj).length-1;i++)
-                {
-                    displayString = displayString + '<div class="post">';    
-                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'listing/letters/'+ obj[i].albumID + '" title="View Album">';
-                    displayString = displayString + '<div class="fixOverlayDiv">';
-                    displayString = displayString + '<img class="img-responsive" src="' + obj[i].Randomimage + '">';
-                    displayString = displayString + '<div class="OverlayText">' + obj[i].Lettercount + '<span class="link"><i class="fa fa-link"></i></span></div>';
-                    displayString = displayString + '</div>';
-                    displayString = displayString + '<p class="image-desc">';
-                    displayString = displayString + '<strong>' + obj[i].Title + '</strong>';    
-                    displayString = displayString + "</p>";    
-                    displayString = displayString + '</a>'; 
-                    displayString = displayString + '</div>';
-
-                }
-
-                var $content = $(displayString); 
-                $content.css('display','none');
-
-                $grid.append($content).imagesLoaded(
-                    function(){
-                        $content.fadeIn(500);
-                        $grid.masonry('appended', $content);
-                        processing = false;
-                    }
-                );                                     
-
-                displayString = "";
-
-                $("#hidden-data").append(obj.hidden);
-
-            },
-            error: function(){console.log("Fail");}             
-      });
-    }
-    $(window).scroll(function(){
-        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.7 ){
-            if($(".lastpage").length == 0){
-                var pagenum = parseInt($(".pagenum:last").val()) + 1;
-                if(!processing)
-                {
-                    getresult(base_url+'describe/collection/'+ collectionID + '?page='+pagenum);
-                }
-            }
-        }
-        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.95 ){
-			
-			document.getElementById("loader-icon").display = 'block';
-		}
-    });
-});     
-</script>
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -129,3 +49,83 @@ $(document).ready(function(){
     <?php echo $hiddenData; ?>
 </div>
 <div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div>
+<script>
+$(document).ready(function(){
+
+    var processing = false;
+
+    var collectionID = <?php echo  '"' . $collectionID . '"';  ?>;
+
+    function getresult(url) {
+        processing = true;
+        $.ajax({
+            url: url,
+            type: "GET",
+            complete: function(){
+                $('#loader-icon').hide();
+            },
+            success: function(data){
+                processing = true;
+                // console.log(data);
+                var gutter = parseInt(jQuery('.post').css('marginBottom'));
+                var $grid = $('#posts').masonry({
+                    gutter: gutter,
+                    // specify itemSelector so stamps do get laid out
+                    itemSelector: '.post',
+                    columnWidth: '.post',
+                    fitWidth: true
+                });
+                var obj = JSON.parse(data);
+                var displayString = "";
+                for(i=0;i<Object.keys(obj).length-1;i++)
+                {
+                    displayString = displayString + '<div class="post">';    
+                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'listing/letters/'+ obj[i].albumID + '" title="View Album">';
+                    displayString = displayString + '<div class="fixOverlayDiv">';
+                    displayString = displayString + '<img class="img-responsive" src="' + obj[i].Randomimage + '">';
+                    displayString = displayString + '<div class="OverlayText">' + obj[i].Lettercount + '<span class="link"><i class="fa fa-link"></i></span></div>';
+                    displayString = displayString + '</div>';
+                    displayString = displayString + '<p class="image-desc">';
+                    displayString = displayString + '<strong>' + obj[i].Title + '</strong>';    
+                    displayString = displayString + "</p>";    
+                    displayString = displayString + '</a>'; 
+                    displayString = displayString + '</div>';
+
+                }
+
+                var $content = $(displayString); 
+                $content.css('display','none');
+
+                $grid.append($content).imagesLoaded(
+                    function(){
+                        $content.fadeIn(250);
+                        $grid.masonry('appended', $content);
+                        processing = false;
+                    }
+                );                                     
+
+                displayString = "";
+
+                $("#hidden-data").append(obj.hidden);
+
+            },
+            error: function(){console.log("Fail");}             
+      });
+    }
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.6 ){
+            if($(".lastpage").length == 0){
+                var pagenum = parseInt($(".pagenum:last").val()) + 1;
+                if(!processing)
+                {
+                    getresult(base_url+'describe/collection/'+ collectionID + '?page='+pagenum);
+                }
+            }
+        }
+        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.95 ){
+			
+			document.getElementById("loader-icon").display = 'block';
+		}
+    });
+});     
+</script>

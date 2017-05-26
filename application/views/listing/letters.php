@@ -4,80 +4,6 @@
 	$albumID = $data[0]->albumID;
 	$letterID = $data[0]->letterID;
 ?>
-<script>
-$(document).ready(function(){
-
-    var processing = false;
-    var albumID = <?php echo  '"' . $albumID . '"';  ?>;
-    var letterID = <?php echo  '"' . $letterID . '"';  ?>;
-
-    function getresult(url) {
-        processing = true;
-        $.ajax({
-            url: url,
-            type: "GET",
-            complete: function(){
-                $('#loader-icon').hide();
-            },
-            success: function(data){
-                processing = true;
-                // console.log(data);
-                var gutter = parseInt(jQuery('.post').css('marginBottom'));
-                var $grid = $('#posts').masonry({
-                    gutter: gutter,
-                    itemSelector: '.post',
-                    columnWidth: '.post'
-                });
-                var obj = JSON.parse(data);
-                var displayString = "";
-                for(i=0;i<Object.keys(obj).length-2;i++)
-                {                    
-                    displayString = displayString + '<div class="post">';    
-                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'describe/letter/'+ albumID + '/' + albumID + '__' + obj[i].letterID + '" title="View Details">';
-                    displayString = displayString + '<img src="' + <?php echo '"' . LETTER_JPG_URL . '"'; ?> + albumID + '/' + obj[i].letterID +'/thumbs/001.JPG" >';
-                    displayString = displayString + '<div class="OverlayText">' + obj[i].pageCount + '<br /><span class="link"><i class="fa fa-link"></i></span></div>';
-                    if(obj[i].Caption){
-                        displayString = displayString + '<p class="image-desc">';
-                        displayString = displayString + '<strong>' + obj[i].Caption + '</strong>';    
-                        displayString = displayString + "</p>";
-                    }    
-                    displayString = displayString + '</a>'; 
-                    displayString = displayString + '</div>';
-                }
-
-                var $content = $(displayString); 
-                $content.css('display','none');
-                $grid.append($content).imagesLoaded(
-                    function(){
-                        $content.fadeIn(500);
-                        $grid.masonry('appended', $content);
-                        processing = false;
-                    }
-                );                                     
-
-               displayString = "";
-               $("#hidden-data").append(obj.hidden);
-            },
-            error: function(){console.log("Fail");}             
-      });
-    }
-    $(window).scroll(function(){
-        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.65){
-            if($(".lastpage").length == 0){
-                var pagenum = parseInt($(".pagenum:last").val()) + 1;
-                if(!processing)
-                {
-                    getresult(base_url+'listing/letters/' + albumID + '/?page='+pagenum);
-                }
-            }                        
-        }
-        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.95){
-			document.getElementById("loader-icon").display = 'block';
-		}
-    });
-});     
-</script>
-</script>
 <div class="container">
     <div class="row first-row">
         <!-- Column 1 -->
@@ -137,3 +63,76 @@ $(document).ready(function(){
     <?php echo $hiddenData; ?>
 </div>
 <div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div>
+<script>
+$(document).ready(function(){
+
+    var processing = false;
+    var albumID = <?php echo  '"' . $albumID . '"';  ?>;
+    var letterID = <?php echo  '"' . $letterID . '"';  ?>;
+
+    function getresult(url) {
+        processing = true;
+        $.ajax({
+            url: url,
+            type: "GET",
+            complete: function(){
+                $('#loader-icon').hide();
+            },
+            success: function(data){
+                processing = true;
+                // console.log(data);
+                var gutter = parseInt(jQuery('.post').css('marginBottom'));
+                var $grid = $('#posts').masonry({
+                    gutter: gutter,
+                    itemSelector: '.post',
+                    columnWidth: '.post'
+                });
+                var obj = JSON.parse(data);
+                var displayString = "";
+                for(i=0;i<Object.keys(obj).length-2;i++)
+                {                    
+                    displayString = displayString + '<div class="post">';    
+                    displayString = displayString + '<a href="' + <?php echo '"' . BASE_URL . '"'; ?> + 'describe/letter/'+ albumID + '/' + albumID + '__' + obj[i].letterID + '" title="View Details">';
+                    displayString = displayString + '<img src="' + <?php echo '"' . LETTER_JPG_URL . '"'; ?> + albumID + '/' + obj[i].letterID +'/thumbs/001.JPG" >';
+                    displayString = displayString + '<div class="OverlayText">' + obj[i].pageCount + '<br /><span class="link"><i class="fa fa-link"></i></span></div>';
+                    if(obj[i].Caption){
+                        displayString = displayString + '<p class="image-desc">';
+                        displayString = displayString + '<strong>' + obj[i].Caption + '</strong>';    
+                        displayString = displayString + "</p>";
+                    }    
+                    displayString = displayString + '</a>'; 
+                    displayString = displayString + '</div>';
+                }
+
+                var $content = $(displayString); 
+                $content.css('display','none');
+                $grid.append($content).imagesLoaded(
+                    function(){
+                        $content.fadeIn(500);
+                        $grid.masonry('appended', $content);
+                        processing = false;
+                    }
+                );                                     
+
+               displayString = "";
+               $("#hidden-data").append(obj.hidden);
+            },
+            error: function(){console.log("Fail");}             
+      });
+    }
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.6){
+            if($(".lastpage").length == 0){
+                var pagenum = parseInt($(".pagenum:last").val()) + 1;
+                if(!processing)
+                {
+                    getresult(base_url+'listing/letters/' + albumID + '/?page='+pagenum);
+                }
+            }                        
+        }
+        if ($(window).scrollTop() >= ($(document).height() - $(window).height()) * 0.95){
+			document.getElementById("loader-icon").display = 'block';
+		}
+    });
+});     
+</script>
