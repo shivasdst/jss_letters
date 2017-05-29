@@ -60,7 +60,8 @@ $(document).ready(function() {
 jQuery(window).load(function () {
 
 
-
+	buildMasonry();
+	
     // Takes the gutter width from the bottom margin of .post
 
     var gutter = parseInt(jQuery('.post').css('marginBottom'));

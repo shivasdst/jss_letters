@@ -64,7 +64,6 @@ $(document).ready(function(){
                 $('#loader-icon').hide();
             },
             success: function(data){
-				$('.pre-loading').hide();
                 processing = true;
                 // console.log(data);
                 var gutter = parseInt(jQuery('.post').css('marginBottom'));
@@ -99,7 +98,8 @@ $(document).ready(function(){
 
                 var $content = $(displayString); 
                 $content.css('display','none');
-
+				
+				$('.pre-loading').hide();
                 $grid.append($content).imagesLoaded(
                     function(){
                         $content.fadeIn(250);
