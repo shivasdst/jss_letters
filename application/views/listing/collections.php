@@ -64,6 +64,7 @@ $(document).ready(function(){
                 $('#loader-icon').hide();
             },
             success: function(data){
+				$('.pre-loading').hide();
                 processing = true;
                 // console.log(data);
                 var gutter = parseInt(jQuery('.post').css('marginBottom'));
@@ -99,7 +100,6 @@ $(document).ready(function(){
                 var $content = $(displayString); 
                 $content.css('display','none');
 				
-				$('.pre-loading').hide();
                 $grid.append($content).imagesLoaded(
                     function(){
                         $content.fadeIn(250);
@@ -131,21 +131,23 @@ $(document).ready(function(){
 							columnWidth: '.post',
 							fitWidth: true
 						});
-						var limit;
-						if(window.remainingDivs == 'undefined')
-						{
-							limit = 5;
-							console.log("inside undefined");
-						}
-						else
-						{
-							limit = window.remainingDivs;
-						}
-					
+						
+						var	limit = window.remainingDivs;
+						if(limit == undefined) limit = 5;
+						
+					//~ console.log("outside limti" + window.remainingDivs);
 					for(k = 0; k < limit; k++)
 					{
-						displayString = displayString + '<div class="post pre-loading">';
-						displayString = displayString + '<img class="img-responsive" src="' + <?php echo '"' . STOCK_IMAGE_URL . '"'; ?> + 'loading.gif">';
+						color = '';
+						var letters = '0123456789ABCDEF';
+						var color = '#';
+						for (var i = 0; i < 6; i++ ) {
+							color += letters[Math.floor(Math.random() * 16)];
+						}
+						
+						
+						displayString = displayString + '<div class="post pre-loading" style="background-color:' + color + '";>';
+						displayString = displayString + '<img src="' + <?php echo '"' . STOCK_IMAGE_URL . '"'; ?> + 'loading.gif">';
 						displayString = displayString + '</div>';
 					}   
 
