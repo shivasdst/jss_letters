@@ -26,6 +26,8 @@
 <?php 
     $hiddenData = $data["hidden"]; 
     unset($data["hidden"]);
+    $remainingDivs = $data["remainingDivs"]; 
+    unset($data["remainingDivs"]);
 ?>  
 <div id="grid" class="container-fluid">
     <div id="posts">
@@ -46,14 +48,10 @@
     <?php echo $hiddenData; ?>
 </div>
 <div id="loader-icon"><img src="<?=STOCK_IMAGE_URL?>loading.gif" /><div>
-
-
-
 <script>
 $(document).ready(function(){
 
     var processing = false;
-
     function getresult(url) {
         processing = true;
         $.ajax({
@@ -66,6 +64,7 @@ $(document).ready(function(){
                 $('#loader-icon').hide();
             },
             success: function(data){
+				$('.pre-loading').hide();
                 processing = true;
                 // console.log(data);
                 var gutter = parseInt(jQuery('.post').css('marginBottom'));
@@ -78,7 +77,7 @@ $(document).ready(function(){
                 });
                 var obj = JSON.parse(data);
                 var displayString = "";
-                for(i=0;i<Object.keys(obj).length-1;i++)
+                for(i=0;i<Object.keys(obj).length-2;i++)
                 {                    
 
                     displayString = displayString + '<div class="post">';    
@@ -110,6 +109,7 @@ $(document).ready(function(){
                 );
 
                 displayString = "";
+                window.remainingDivs = obj.remainingDivs;
                 $("#hidden-data").append(obj.hidden);
 
             },
@@ -122,8 +122,45 @@ $(document).ready(function(){
                 var pagenum = parseInt($(".pagenum:last").val()) + 1;
                 if(!processing)
                 {
+					displayString = '';
+					var gutter = parseInt(jQuery('.post').css('marginBottom'));
+					 var $grid = $('#posts').masonry({
+							gutter: gutter,
+							// specify itemSelector so stamps do get laid out
+							itemSelector: '.post',
+							columnWidth: '.post',
+							fitWidth: true
+						});
+						var limit;
+						if(window.remainingDivs == 'undefined')
+						{
+							limit = 5;
+							console.log("inside undefined");
+						}
+						else
+						{
+							limit = window.remainingDivs;
+						}
+					
+					for(k = 0; k < limit; k++)
+					{
+						displayString = displayString + '<div class="post pre-loading">';
+						displayString = displayString + '<img class="img-responsive" src="' + <?php echo '"' . STOCK_IMAGE_URL . '"'; ?> + 'loading.gif">';
+						displayString = displayString + '</div>';
+					}   
+
+					var $content = $(displayString); 
+					$content.css('display','none');
+
+					$grid.append($content).imagesLoaded(
+						function(){
+							$content.fadeIn(250);
+							$grid.masonry('appended', $content);
+						}
+					);
+					
                     getresult(base_url+'listing/collections/?page='+pagenum);
-                }   
+                }
             }
         }
     });
