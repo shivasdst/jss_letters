@@ -85,24 +85,24 @@ class listingModel extends Model {
 		$collectionsFile = JSON_PRECAST_URL . "collections.json";
 		$jsonData = file_get_contents($collectionsFile);
 		$data = array_slice(json_decode($jsonData,true),$start,$perPage);
-		
+
 		for($i=0;$i<sizeof($data);$i++){
 			
+			$letterList = 
 			$data[$i]["Randomimage"] = $this->getRandomImageInAlbum($data[$i]['albumList'][array_rand($data[$i]['albumList'])]);
 			$data[$i]["Albumcount"] = sizeof($data[$i]['albumList']);
 		}
+
 		
 		if(!empty($data)){
 			
 			$data["hidden"] = '<input type="hidden" class="pagenum" value="' . $page . '" />';
 		}
 		else{
-			
+
 			$data["hidden"] = '<div class="lastpage"></div>';	
 		}
-		
-		$data['remainingDivs'] = count(array_slice(json_decode($jsonData,true),$start+$perPage,$perPage));
-		
+
 		return $data;
 	}
 }
