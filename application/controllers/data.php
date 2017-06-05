@@ -77,6 +77,7 @@ class data extends Controller {
 		{
 			$this->updateLetterDetails($letterID,$albumID,$fileContents);
 			// $this->updateRepo();
+			$this->absoluteRedirect($letterUrl);
 		}
 		else
 		{
