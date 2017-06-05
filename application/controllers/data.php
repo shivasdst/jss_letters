@@ -76,7 +76,7 @@ class data extends Controller {
 		if(file_put_contents($path,$fileContents))
 		{
 			$this->updateLetterDetails($letterID,$albumID,$fileContents);
-			$this->updateRepo();
+			// $this->updateRepo();
 		}
 		else
 		{
@@ -122,7 +122,7 @@ class data extends Controller {
 		if(file_put_contents($path,$fileContents))
 		{
 			$this->updateAlbumDetails($albumID, $fileContents);
-			$this->updateRepo();
+			// $this->updateRepo();
 		}
 		else
 		{
