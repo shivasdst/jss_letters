@@ -2,11 +2,8 @@
     "id": "042",
     "Type": "Letter",
     "albumID": "007.019",
-    "From": "",
-    "To": "",
-    "Date": "",
-    "Place": "",
-    "Language": "",
-    "Keywords": "",
-    "Misc": ""
+    "From": "Cash Bill",
+    "Place": "Mysuru",
+    "Language": "kn, en",
+    "Keywords": "Cash Bills"
 }
